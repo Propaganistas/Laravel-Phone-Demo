@@ -1,0 +1,24 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  padding-top: 90px;
+}
+
+.navbar-brand:hover {
+  cursor: default !important;
+  color: $navbar-inverse-brand-color !important;
+}
+
+.navbar-count {
+  padding: 6px;
+  text-align: center;
+  width: 30px !important;
+}
