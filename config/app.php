@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel Phone demo'),
+    'package_version' => env('PACKAGE_VERSION', '???'),
 
     /*
     |--------------------------------------------------------------------------
