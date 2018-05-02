@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
+use PackageVersions\Versions as Package;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('package.version', function($app) {
+            return Str::before(Package::getVersion('propaganistas/laravel-phone'), '@');
+        });
     }
 }
