@@ -11,4 +11,4 @@
 |
 */
 
-Route::post('validate', 'Controller@validatePhone');
+Route::post('validate', 'Controller@validateFields');

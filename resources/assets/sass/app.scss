@@ -1,24 +1,34 @@
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+@import "~uikit/src/scss/uikit-theme.scss";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-body {
-  padding-top: 90px;
+[v-cloak] {
+  display: none;
 }
 
-.navbar-brand:hover {
-  cursor: default !important;
-  color: $navbar-inverse-brand-color !important;
+label[for] {
+  cursor: pointer;
 }
 
-.navbar-count {
-  padding: 6px;
-  text-align: center;
-  width: 30px !important;
+.uk-form-icon.text {
+  width: 70px;
+
+  &:not(.uk-form-icon-flip) ~ .uk-input {
+    padding-left: 65px !important;
+  }
+}
+
+// Prevent doubled icons because of UIkit-Vue
+.uk-icon {
+  > svg {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.uk-text-small {
+  code {
+    font-size: 0.75rem;
+  }
 }

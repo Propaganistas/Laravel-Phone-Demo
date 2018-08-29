@@ -2,113 +2,147 @@
 
 @section('content')
 
-    <div id="app">
+    <div id="app" uk-grid>
 
-        <div class="row" v-for="(phone, index) in inputs">
+        <div class="uk-flex-last@m uk-width-2-3@m" v-if="showHelp">
+            <h3>Demo application</h3>
+            <p>This demo application allows you to test the phone validation component of the <a href="https://github.com/propaganistas/laravel-phone">Laravel-Phone</a> package.</p>
+            <p class="uk-text-bold">Usage guidelines:</p>
+            <ol uk-margin>
+                <li>
+                    The phone number's field will automatically get validated using the <code>phone</code> validator.
+                    Provide some additional parameters to the validator as you wish.
+                    This represents your server-side code.
+                </li>
+                <li>Enter the phone number you would like to test.</li>
+                <li>
+                    Optionally enable the presence of a country field and assign it some value.
+                    By default it is named aptly so the validator will detect it automatically, but you can override its input name to omit this behavior.
+                    In this case remember to specify the field's name as a validator parameter in order to be recognized during validation.
+                </li>
+            </ol>
+        </div>
 
-            <div class="col-md-6">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-8 col-sm-10 col-md-6">
-                            <div class="form-group">
-                                <label for="phone">Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Phone number" v-model="phone.number">
-                            </div>
-                        </div>
-                        <div class="col-xs-4 col-sm-2">
-                            <div class="form-group">
-                                <label>Country</label>
-                                <input type="text" class="form-control" placeholder="Code" v-model="phone.number_country">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="parameters">Validator parameters</label>
-                                <input type="text" class="form-control" id="parameters" placeholder="Parameters" v-model="phone.parameters">
-                            </div>
-                        </div>
+        <div class="uk-flex-last uk-width-2-3@m" v-else>
+
+            <div class="uk-flex uk-flex-center" v-if="loading">
+                <div uk-spinner class="uk-margin-small-top uk-margin-small-bottom"></div>
+            </div>
+
+            <div class="uk-margin uk-child-width-1-2@m" uk-grid v-if="! loading">
+                <div>
+                    <div class="uk-text-center">Input</div>
+                    <div>
+<pre>
+@{{ formatAsPHPArray(response.request) }}
+</pre>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="uk-text-center">Validation rules</div>
+                    <div>
+<pre>
+@{{ formatAsPHPArray(response.rules) }}
+</pre>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label>Results</label>
-                                <pre class="pre-scrollable">@{{ phone.response.heading }}
+            <div class="uk-margin" uk-margin v-if="! loading">
+                <div class="uk-text-center">Result</div>
 
-@{{ phone.response.message }}</pre>
-                            </div>
-                        </div>
-                    </div>
+                <div uk-alert class="uk-alert uk-alert-success" v-if="response.passes">
+                    <i uk-icon="icon: check" class="uk-margin-small-right"></i>
+                    <span>Validation passes</span>
+                </div>
+
+                <div uk-alert class="uk-alert uk-alert-danger" v-if="! response.passes">
+                    <i uk-icon="icon: close" class="uk-margin-small-right"></i>
+                    <span v-if="response.exception">@{{ response.exception }}</span>
+                    <span v-else>Validation failed</span>
+                </div>
+
+                <div v-if="response.message">
+<pre>
+@{{ response.message }}
+</pre>
                 </div>
             </div>
 
         </div>
 
+        <div class="uk-flex-first@m uk-width-1-3@m">
+
+            <div class="uk-margin uk-padding-small uk-background-muted" uk-margin>
+                <div class="uk-text-center">Server-side</div>
+
+                <div>
+                    <label class="uk-form-label" for="parameters">
+                        <span>Validator parameters</span>
+                        <a href="https://github.com/propaganistas/laravel-phone#validation" class="uk-link-reset" target="_blank">
+                            <i style="margin-left: 5px;" uk-icon="icon: info; ratio: 0.75;" uk-tooltip="pos: right;" title="Click to open the README"></i>
+                        </a>
+                    </label>
+                    <div class="uk-form-controls uk-inline uk-width-1-1">
+                        <span class="uk-form-icon text">
+                            <span>phone:</span>
+                        </span>
+                        <input id="parameters" type="text" name="parameters" v-model="parameters" class="uk-input" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-margin uk-padding-small uk-background-muted" uk-margin>
+                <div class="uk-text-center">Frontend form</div>
+
+                <div>
+                    <label class="uk-form-label" for="phone">Phone number</label>
+                    <div class="uk-form-controls">
+                        <input id="phone" type="tel" name="phone" class="uk-input" v-model="phone" placeholder="">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="uk-form-label" for="phone_country">
+                        <span>Country field</span>
+                        <span class="toggleable">(optional)</span>
+                    </label>
+                    <button class="uk-button uk-button-default uk-width-1-1 toggleable" type="button" uk-toggle="target: .toggleable" @click="toggle()">
+                        Click to add
+                    </button>
+                    <div class="uk-form-controls toggleable" hidden>
+                        <select id="phone_country" name="phone_country" v-model="country" class="uk-select">
+                            <option value="" selected>[ Empty ]</option>
+                            <option value="ZZ">[ Invalid value ]</option>
+                            <option disabled>---------------</option>
+                            @foreach(\Iso3166\Codes::$countries as $code => $name)
+                                <option value="{{ $code }}">{{ $name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="toggleable" hidden>
+                    <label class="uk-form-label" for="phone_country">
+                        <span>Country input name</span>
+                        <i style="margin-left: 5px;" uk-icon="icon: info; ratio: 0.75;" uk-tooltip="pos: right;" title="Optionally rename the country field so it doesn't get autodetected by the validator"></i>
+                    </label>
+                    <div class="uk-form-controls">
+                        <input id="_country_field_name" type="text" name="_country_field_name" v-model="country_name" class="uk-input uk-form-small" placeholder="field_country">
+                    </div>
+                </div>
+
+                <div class="toggleable" hidden>
+                    <button class="uk-button uk-button-default uk-width-1-1 toggleable" type="button" uk-toggle="target: .toggleable" hidden @click="toggle()">
+                        Click to remove
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
     </div>
-
-@endsection
-
-@section('scripts')
-    <script>
-
-        const App = new Vue({
-            el: '#app',
-            data: {
-                inputs: [
-                    @for($i = 0; $i < request('count', 1); $i++)
-                    {
-                        number: null,
-                        number_country: null,
-                        parameters: null,
-                        response: {
-                            heading: null,
-                            message: null,
-                        },
-                    },
-                    @endfor
-                ]
-            },
-            watch: {
-                @for($i = 0; $i < request('count', 1); $i++)
-                    'inputs.{{ $i }}.number': {
-                        handler: _.debounce(function () {
-                            this.validate({{$i}});
-                        }, 200),
-                        deep: true
-                    },
-                    'inputs.{{ $i }}.number_country': {
-                        handler: _.debounce(function () {
-                            this.validate({{$i}});
-                        }, 200),
-                        deep: true
-                    },
-                    'inputs.{{ $i }}.parameters': {
-                        handler: _.debounce(function () {
-                            this.validate({{$i}});
-                        }, 200),
-                        deep: true
-                    },
-                @endfor
-            },
-            methods: {
-                validate(index) {
-                    axios.post('api/validate', this.inputs[index])
-                        .then(response => {
-                            this.inputs[index]['response']['heading'] = response.data.validation;
-                            this.inputs[index]['response']['message'] = response.data.errors;
-                        })
-                        .catch(error => {
-                            this.inputs[index]['response']['heading'] = error.response.data.exception;
-                            this.inputs[index]['response']['message'] = error.response.data.message;
-                        });
-                }
-            }
-        });
-
-    </script>
 
 @endsection
