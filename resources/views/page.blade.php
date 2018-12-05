@@ -6,7 +6,9 @@
 
         <div class="uk-flex-last@m uk-width-2-3@m" v-if="showHelp">
             <h3>Demo application</h3>
-            <p>This demo application allows you to test the phone validation component of the <a href="https://github.com/propaganistas/laravel-phone">Laravel-Phone</a> package.</p>
+            <p>
+            	This demo application allows you to test the phone validation component of the <a href="https://github.com/propaganistas/laravel-phone">Laravel-Phone</a> package.
+            </p>
             <p class="uk-text-bold">Usage guidelines:</p>
             <ol uk-margin>
                 <li>
@@ -21,6 +23,9 @@
                     In this case remember to specify the field's name as a validator parameter in order to be recognized during validation.
                 </li>
             </ol>
+            <p>
+            	This is a safe playground. Nothing will be stored.
+            </p>
         </div>
 
         <div class="uk-flex-last uk-width-2-3@m" v-else>
@@ -116,8 +121,8 @@
                             <option value="" selected>[ Empty ]</option>
                             <option value="ZZ">[ Invalid value ]</option>
                             <option disabled>---------------</option>
-                            @foreach(\Iso3166\Codes::$countries as $code => $name)
-                                <option value="{{ $code }}">{{ $name }}</option>
+                            @foreach($countries as $country)
+                                <option value="{{ $country['alpha2'] }}">{{ $country['name'] }}</option>
                             @endforeach
                         </select>
                     </div>

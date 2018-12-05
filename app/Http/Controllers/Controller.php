@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use League\ISO3166\ISO3166;
 
 class Controller extends BaseController
 {
@@ -15,7 +16,9 @@ class Controller extends BaseController
      */
     public function index(Request $request)
     {
-        return view('page');
+        return view('page')->with([
+            'countries' => with(new ISO3166)->all(),
+        ]);
     }
 
     /**
@@ -25,21 +28,20 @@ class Controller extends BaseController
     public function validateFields(Request $request)
     {
         $parameters = ltrim(Str::after($request->input('parameters'), 'phone'), ':');
-        $countryInput = $request->input('country_name');
-
-        $data = $request->only(array_filter(['field', $countryInput]));
-        $rules = [
-            'field' => 'phone' . ($parameters ? ':' . $parameters : null),
-        ];
-
-        $validator = Validator::make($data, $rules);
-        $exception = null;
-        $message = null;
+        
+        $validator = Validator::make(
+            $data = $request->only(array_filter([
+                'field',
+                $request->input('country_name')
+            ])),
+            $rules = [
+                'field' => 'phone' . ($parameters ? ':' . $parameters : null),
+            ]
+        );
 
         try {
             $passes= $validator->passes();
         } catch (\Exception $e) {
-            $passes = false;
             $exception = get_class($e);
             $message = $e->getMessage();
         }
@@ -47,10 +49,10 @@ class Controller extends BaseController
         return response()->json([
             'request' => $data,
             'rules' => $rules,
-            'passes' => $passes,
+            'passes' => $passes ?? false,
             'errors' => $validator->errors(),
-            'exception' => $exception,
-            'message' => $message,
+            'exception' => $exception ?? null,
+            'message' => $message ?? null,
         ]);
     }
 }
