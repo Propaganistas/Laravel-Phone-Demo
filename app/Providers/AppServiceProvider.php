@@ -17,8 +17,14 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->instance('illuminate.version', Application::VERSION);
-        $this->app->instance('package.version', $this->getPackageVersion('propaganistas/laravel-phone'));
-        $this->app->instance('libphonenumber.version', $this->getPackageVersion('giggsey/libphonenumber-for-php'));
+
+        $this->app->singleton('package.version', function($app) {
+            return $this->getPackageVersion('propaganistas/laravel-phone');
+        });
+
+        $this->app->singleton('libphonenumber.version', function($app) {
+            return $this->getPackageVersion('giggsey/libphonenumber-for-php');
+        });
     }
 
     /**
