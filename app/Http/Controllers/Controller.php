@@ -16,9 +16,7 @@ class Controller extends BaseController
      */
     public function index(Request $request)
     {
-        return view('page')->with([
-            'countries' => with(new ISO3166)->all(),
-        ]);
+        return view('page'):
     }
 
     /**
