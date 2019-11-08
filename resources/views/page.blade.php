@@ -117,7 +117,7 @@
                         Click to add
                     </button>
                     <div class="uk-form-controls toggleable" hidden>
-                        <input id="phone_country" type="text" name="phone_country" class="uk-input" v-model="phone_country" placeholder="Two-letter country code">
+                        <input id="phone_country" type="text" name="phone_country" class="uk-input" v-model="country" placeholder="Two-letter country code">
                     </div>
                 </div>
 
