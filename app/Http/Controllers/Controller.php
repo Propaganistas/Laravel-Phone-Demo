@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use League\ISO3166\ISO3166;
 
 class Controller extends BaseController
 {
@@ -16,9 +15,7 @@ class Controller extends BaseController
      */
     public function index(Request $request)
     {
-        return view('page')->with([
-            'countries' => with(new ISO3166)->all(),
-        ]);
+        return view('page'):
     }
 
     /**

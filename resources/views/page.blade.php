@@ -117,14 +117,7 @@
                         Click to add
                     </button>
                     <div class="uk-form-controls toggleable" hidden>
-                        <select id="phone_country" name="phone_country" v-model="country" class="uk-select">
-                            <option value="" selected>[ Empty ]</option>
-                            <option value="ZZ">[ Invalid value ]</option>
-                            <option disabled>---------------</option>
-                            @foreach($countries as $country)
-                                <option value="{{ $country['alpha2'] }}">{{ $country['name'] }}</option>
-                            @endforeach
-                        </select>
+                        <input id="phone_country" type="text" name="phone_country" class="uk-input" v-model="country" placeholder="Two-letter country code">
                     </div>
                 </div>
 
