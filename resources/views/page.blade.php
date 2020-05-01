@@ -90,9 +90,6 @@
                         </a>
                     </label>
                     <div class="uk-form-controls uk-inline uk-width-1-1">
-                        <span class="uk-form-icon text">
-                            <span>phone:</span>
-                        </span>
                         <input id="parameters" type="text" name="parameters" v-model="parameters" class="uk-input" placeholder="">
                     </div>
                 </div>

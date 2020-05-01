@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class Controller extends BaseController
 {
@@ -23,33 +24,33 @@ class Controller extends BaseController
      * @return \Illuminate\Http\JsonResponse
      */
     public function validateFields(Request $request)
-    {
-        $parameters = ltrim(Str::after($request->input('parameters'), 'phone'), ':');
-        
+    {        
         $validator = Validator::make(
             $data = $request->only(array_filter([
                 'field',
                 $request->input('country_name')
             ])),
             $rules = [
-                'field' => 'phone' . ($parameters ? ':' . $parameters : null),
+                'field' => Arr::wrap($request->input('parameters')),
             ]
         );
 
         try {
-            $passes= $validator->passes();
+            return response()->json([
+	            'request' => $data,
+	            'rules' => $rules,
+	            'passes' => $validator->passes(),
+	            'message' => $validator->errors()->get('field') ?: '',
+	            'exception' => null,
+	        ]);
         } catch (\Exception $e) {
-            $exception = get_class($e);
-            $message = $e->getMessage();
+        	return response()->json([
+	            'request' => $data,
+	            'rules' => $rules,
+	            'passes' => false,
+	            'message' => $e->getMessage(),
+	            'exception' => get_class($e),
+	        ]);
         }
-
-        return response()->json([
-            'request' => $data,
-            'rules' => $rules,
-            'passes' => $passes ?? false,
-            'errors' => $validator->errors(),
-            'exception' => $exception ?? null,
-            'message' => $message ?? null,
-        ]);
     }
 }

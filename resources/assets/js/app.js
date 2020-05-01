@@ -28,7 +28,7 @@ axios.defaults.withCredentials = true;
 new Vue({
     el: '#app',
     data: {
-        parameters: '',
+        parameters: 'phone:',
         phone: '',
         country: '',
         country_name: '',
@@ -64,10 +64,11 @@ new Vue({
             return data;
         },
         shouldValidate() {
-            return this.phone.trim().length > 0;
+            return this.phone.trim().length > 0 || 
+                (this.parameters.trim().length > 0 && this.parameters !== 'phone:');
         },
         showHelp() {
-            return this.phone.length === 0;
+            return ! this.shouldValidate
         }
     },
     watch: {
@@ -102,6 +103,10 @@ new Vue({
             this.withCountry = ! this.withCountry;
         },
         formatAsPHPArray(json) {
+            if (typeof json === 'undefined') {
+                return '';
+            }
+            
             return JSON.stringify(json, null, 4).replace(/^{/g,"[").replace(/}$/g,"]").replace(/": /g,"' => ").replace(/"/g, "'");
         },
         validate: debounce(function () {
@@ -111,11 +116,13 @@ new Vue({
                 .then(response => {
                     this.loading = false;
                     this.response = response.data;
+                    if (response.data.message.length != 0) {
+                        this.response.message = JSON.stringify(response.data.message, null, 4)
+                    }
                 })
                 .catch(error => {
                     this.loading = false;
                     this.response = error.response.data;
-                    this.response.message = error.response.data.exception + "\n\n" + error.response.data.message;
                 });
         }, 300)
     }
