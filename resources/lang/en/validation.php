@@ -88,7 +88,7 @@ return [
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
-    'phone' => 'The :attribute field contains an invalid number.',
+    'phone' => 'The phone field contains an invalid number.',
 
 
     /*
