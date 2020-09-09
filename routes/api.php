@@ -11,4 +11,4 @@
 |
 */
 
-Route::post('validate', 'Controller@validateFields');
+Route::post('validate', [\App\Http\Controllers\Controller::class, 'validate']);

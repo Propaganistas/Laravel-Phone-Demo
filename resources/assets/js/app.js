@@ -3,9 +3,9 @@
  | Imports
  |--------------------------------------------------------------------------
  */
-import axios from 'axios';
-import debounce from 'lodash/debounce';
-import Vue from 'vue';
+import axios from 'axios'
+import debounce from 'lodash/debounce'
+import Vue from 'vue'
 
 /*
  |--------------------------------------------------------------------------
@@ -16,8 +16,8 @@ import Vue from 'vue';
 axios.defaults.headers.common = {
     'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content,
     'X-Requested-With': 'XMLHttpRequest',
-};
-axios.defaults.withCredentials = true;
+}
+axios.defaults.withCredentials = true
 
 /*
  |--------------------------------------------------------------------------
@@ -27,6 +27,7 @@ axios.defaults.withCredentials = true;
 
 new Vue({
     el: '#app',
+
     data: {
         parameters: 'phone:',
         phone: '',
@@ -42,31 +43,35 @@ new Vue({
             message: '',
         },
     },
+
     computed: {
         countryInputName() {
             if (this.country_name.length > 0 && this.country_name !== 'phone') {
-                return this.country_name;
-
+                return this.country_name
             }
-            return 'field_country';
+
+            return 'field_country'
         },
+
         requestData() {
             const data = {
                 parameters: this.parameters,
                 field: this.phone,
-            };
-
-            if (this.withCountry) {
-                data[this.countryInputName] = this.country;
-                data.country_name = this.countryInputName;
             }
 
-            return data;
+            if (this.withCountry) {
+                data[this.countryInputName] = this.country
+                data.country_name = this.countryInputName
+            }
+
+            return data
         },
+
         shouldValidate() {
             return this.phone.trim().length > 0 || 
-                (this.parameters.trim().length > 0 && this.parameters !== 'phone:');
+                (this.parameters.trim().length > 0 && this.parameters !== 'phone:')
         },
+
         showHelp() {
             return ! this.shouldValidate
         }
@@ -74,43 +79,53 @@ new Vue({
     watch: {
         phone(value, old) {
             if (this.shouldValidate) {
-                this.validate();
+                this.validate()
             }
         },
+
         parameters(value, old) {
             if (this.shouldValidate) {
-                this.validate();
+                this.validate()
             }
         },
+
         country(value, old) {
             if (this.shouldValidate) {
-                this.validate();
+                this.validate()
             }
         },
+
         country_name(value, old) {
             if (this.shouldValidate) {
-                this.validate();
+                this.validate()
             }
         },
+
         withCountry(value, old) {
             if (this.shouldValidate) {
-                this.validate();
+                this.validate()
             }
         }
     },
     methods: {
-        toggle: function() {
-            this.withCountry = ! this.withCountry;
+        toggle() {
+            this.withCountry = ! this.withCountry
         },
+
         formatAsPHPArray(json) {
             if (typeof json === 'undefined') {
-                return '';
+                return ''
             }
             
-            return JSON.stringify(json, null, 4).replace(/^{/g,"[").replace(/}$/g,"]").replace(/": /g,"' => ").replace(/"/g, "'");
+            return JSON.stringify(json, null, 4)
+                .replace(/^{/g,"[")
+                .replace(/}$/g,"]")
+                .replace(/": /g,"' => ")
+                .replace(/"/g, "'")
         },
+
         validate: debounce(function () {
-            this.loading = true;
+            this.loading = true
 
             axios.post('api/validate', this.requestData)
                 .then(response => {
@@ -123,7 +138,7 @@ new Vue({
                 .catch(error => {
                     this.loading = false;
                     this.response = error.response.data;
-                });
+                })
         }, 300)
     }
 });
