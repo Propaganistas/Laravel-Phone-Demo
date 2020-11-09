@@ -9,16 +9,16 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^8.11",
-        "laravel/tinker": "^2.4",
-        "ocramius/package-versions": "^1.9",
+        "laravel/framework": "^8.13",
+        "laravel/tinker": "^2.5",
+        "ocramius/package-versions": "^2.1",
         "propaganistas/laravel-phone": "^4.2"
     },
     "require-dev": {
-        "facade/ignition": "^2.4",
+        "facade/ignition": "^2.5",
         "fzaninotto/faker": "^1.9",
         "mockery/mockery": "^1.4",
-        "nunomaduro/collision": "^5.0",
+        "nunomaduro/collision": "^5.1",
         "phpunit/phpunit": "^9.4"
     },
     "config": {
