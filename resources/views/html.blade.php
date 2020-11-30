@@ -31,7 +31,12 @@
             <div class="uk-margin-small-bottom">
                 This demo runs on
             </div>
-            <div uk-grid class="uk-grid-collapse uk-child-width-1-1@m uk-child-width-1-3@l">
+            <div uk-grid class="uk-grid-collapse uk-child-width-1-1@m uk-child-width-1-4@l">
+                <div>
+                    <a href="https://www.php.net/">
+                        <code>PHP&commat;{{ phpversion() }}</code>
+                    </a>
+                </div>
                 <div>
                     <a href="https://github.com/laravel/framework">
                         <code>laravel/framework&commat;{{ app('illuminate.version') }}</code>
