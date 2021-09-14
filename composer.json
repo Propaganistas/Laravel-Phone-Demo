@@ -15,7 +15,7 @@
         "propaganistas/laravel-phone": "^4.3"
     },
     "require-dev": {
-        "facade/ignition": "^2.12",
+        "facade/ignition": "^2.13",
         "fzaninotto/faker": "^1.5",
         "mockery/mockery": "^1.4",
         "nunomaduro/collision": "^5.9",
