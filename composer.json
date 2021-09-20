@@ -11,7 +11,7 @@
         "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^8.61",
         "laravel/tinker": "^2.6",
-        "ocramius/package-versions": "^2.3",
+        "ocramius/package-versions": "^2.4",
         "propaganistas/laravel-phone": "^4.3"
     },
     "require-dev": {
