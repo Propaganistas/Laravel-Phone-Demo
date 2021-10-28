@@ -1145,16 +1145,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.68.0",
+            "version": "v8.68.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "08781be9c1e3f83b0c38ce9539e1dc4664e33a14"
+                "reference": "abe985ff1fb82dd04aab03bc1dc56e83fe61a59f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/08781be9c1e3f83b0c38ce9539e1dc4664e33a14",
-                "reference": "08781be9c1e3f83b0c38ce9539e1dc4664e33a14",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/abe985ff1fb82dd04aab03bc1dc56e83fe61a59f",
+                "reference": "abe985ff1fb82dd04aab03bc1dc56e83fe61a59f",
                 "shasum": ""
             },
             "require": {
@@ -1313,7 +1313,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-10-26T12:52:38+00:00"
+            "time": "2021-10-27T12:31:46+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -2436,16 +2436,16 @@
         },
         {
             "name": "propaganistas/laravel-phone",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Propaganistas/Laravel-Phone.git",
-                "reference": "d85ce8af34d39afa39f96176c5ae645f0784e83c"
+                "reference": "947247c7c9fc7c340eb1d12df49db40d299535c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/d85ce8af34d39afa39f96176c5ae645f0784e83c",
-                "reference": "d85ce8af34d39afa39f96176c5ae645f0784e83c",
+                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/947247c7c9fc7c340eb1d12df49db40d299535c6",
+                "reference": "947247c7c9fc7c340eb1d12df49db40d299535c6",
                 "shasum": ""
             },
             "require": {
@@ -2497,9 +2497,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Propaganistas/Laravel-Phone/issues",
-                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.3.1"
+                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.3.2"
             },
-            "time": "2021-05-10T07:25:05+00:00"
+            "time": "2021-10-27T07:08:01+00:00"
         },
         {
             "name": "psr/container",
