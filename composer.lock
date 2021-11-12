@@ -634,16 +634,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.36",
+            "version": "8.12.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "385660e434e7ad4bf023dde39302e561199b9bb4"
+                "reference": "4113157949337384c41b77bc1d5c0d46c1c3201b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/385660e434e7ad4bf023dde39302e561199b9bb4",
-                "reference": "385660e434e7ad4bf023dde39302e561199b9bb4",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/4113157949337384c41b77bc1d5c0d46c1c3201b",
+                "reference": "4113157949337384c41b77bc1d5c0d46c1c3201b",
                 "shasum": ""
             },
             "require": {
@@ -703,7 +703,7 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php"
             },
-            "time": "2021-10-26T09:45:49+00:00"
+            "time": "2021-11-11T16:06:11+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1731,23 +1731,23 @@
         },
         {
             "name": "league/iso3166",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/iso3166.git",
-                "reference": "9976d382f270ad3f3df8a68719beb7a7179ffa1e"
+                "reference": "1a3ec7e6f1e4f16fce68dc239bafae217fbdcfef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/iso3166/zipball/9976d382f270ad3f3df8a68719beb7a7179ffa1e",
-                "reference": "9976d382f270ad3f3df8a68719beb7a7179ffa1e",
+                "url": "https://api.github.com/repos/thephpleague/iso3166/zipball/1a3ec7e6f1e4f16fce68dc239bafae217fbdcfef",
+                "reference": "1a3ec7e6f1e4f16fce68dc239bafae217fbdcfef",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.0"
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "extra": {
@@ -1784,7 +1784,7 @@
                 "issues": "https://github.com/thephpleague/iso3166/issues",
                 "source": "https://github.com/thephpleague/iso3166"
             },
-            "time": "2020-12-05T06:50:42+00:00"
+            "time": "2021-10-22T12:47:55+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -2437,16 +2437,16 @@
         },
         {
             "name": "propaganistas/laravel-phone",
-            "version": "4.3.2",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Propaganistas/Laravel-Phone.git",
-                "reference": "947247c7c9fc7c340eb1d12df49db40d299535c6"
+                "reference": "dc67737dc53e5d59b6765b5f4371a5fad4ec3e6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/947247c7c9fc7c340eb1d12df49db40d299535c6",
-                "reference": "947247c7c9fc7c340eb1d12df49db40d299535c6",
+                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/dc67737dc53e5d59b6765b5f4371a5fad4ec3e6b",
+                "reference": "dc67737dc53e5d59b6765b5f4371a5fad4ec3e6b",
                 "shasum": ""
             },
             "require": {
@@ -2454,11 +2454,11 @@
                 "illuminate/contracts": "^8.9",
                 "illuminate/support": "^8.0",
                 "illuminate/validation": "^8.0",
-                "league/iso3166": "^2.0|^3.0",
+                "league/iso3166": "^2.0|^3.0|^4.0",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "nunomaduro/larastan": "^0.6.11",
+                "nunomaduro/larastan": "^1.0",
                 "orchestra/testbench": "*",
                 "phpunit/phpunit": "*"
             },
@@ -2498,9 +2498,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Propaganistas/Laravel-Phone/issues",
-                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.3.2"
+                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.3.3"
             },
-            "time": "2021-10-27T07:08:01+00:00"
+            "time": "2021-11-11T16:32:46+00:00"
         },
         {
             "name": "psr/container",
@@ -7600,16 +7600,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "d89cc98761b8cb5a1a235a6b703ae50d34080e65"
+                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/d89cc98761b8cb5a1a235a6b703ae50d34080e65",
-                "reference": "d89cc98761b8cb5a1a235a6b703ae50d34080e65",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/65e8b7db476c5dd267e65eea9cab77584d3cfff9",
+                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9",
                 "shasum": ""
             },
             "require": {
@@ -7658,14 +7658,14 @@
                 }
             ],
             "description": "Provides the functionality to export PHP variables for visualization",
-            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "homepage": "https://www.github.com/sebastianbergmann/exporter",
             "keywords": [
                 "export",
                 "exporter"
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.3"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.4"
             },
             "funding": [
                 {
@@ -7673,7 +7673,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-28T05:24:23+00:00"
+            "time": "2021-11-11T14:18:36+00:00"
         },
         {
             "name": "sebastian/global-state",
