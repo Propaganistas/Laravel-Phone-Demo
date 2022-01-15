@@ -14,13 +14,6 @@
         "ocramius/package-versions": "^2.4",
         "propaganistas/laravel-phone": "^4.3"
     },
-    "require-dev": {
-        "facade/ignition": "^2.17",
-        "fzaninotto/faker": "^1.5",
-        "mockery/mockery": "^1.4",
-        "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5"
-    },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
