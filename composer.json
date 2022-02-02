@@ -9,7 +9,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
-        "laravel/framework": "^8.81",
+        "laravel/framework": "^8.82",
         "laravel/tinker": "^2.7",
         "ocramius/package-versions": "^2.5",
         "propaganistas/laravel-phone": "^4.3"
