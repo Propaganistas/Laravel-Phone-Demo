@@ -2469,12 +2469,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Propaganistas\\LaravelPhone\\": "src/"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "Propaganistas\\LaravelPhone\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
