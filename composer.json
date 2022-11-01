@@ -9,7 +9,7 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.37",
         "laravel/tinker": "^2.7",
-        "ocramius/package-versions": "^2.6",
+        "ocramius/package-versions": "^2.7",
         "propaganistas/laravel-phone": "^4.3"
     },
     "config": {
