@@ -10,7 +10,7 @@
         "laravel/framework": "^9.39",
         "laravel/tinker": "^2.7",
         "ocramius/package-versions": "^2.7",
-        "propaganistas/laravel-phone": "^4.3"
+        "propaganistas/laravel-phone": "^4.4"
     },
     "config": {
         "optimize-autoloader": true,
