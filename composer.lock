@@ -2308,16 +2308,16 @@
         },
         {
             "name": "propaganistas/laravel-phone",
-            "version": "4.4.2",
+            "version": "4.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Propaganistas/Laravel-Phone.git",
-                "reference": "bec928bee8181d455493be4801b3ec0fd58c7989"
+                "reference": "8debcc57037c21e7e45d9f4c9439079e6b80a15d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/bec928bee8181d455493be4801b3ec0fd58c7989",
-                "reference": "bec928bee8181d455493be4801b3ec0fd58c7989",
+                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/8debcc57037c21e7e45d9f4c9439079e6b80a15d",
+                "reference": "8debcc57037c21e7e45d9f4c9439079e6b80a15d",
                 "shasum": ""
             },
             "require": {
@@ -2367,7 +2367,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Propaganistas/Laravel-Phone/issues",
-                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.4.2"
+                "source": "https://github.com/Propaganistas/Laravel-Phone/tree/4.4.3"
             },
             "funding": [
                 {
@@ -2375,7 +2375,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-24T07:36:53+00:00"
+            "time": "2023-01-26T13:02:08+00:00"
         },
         {
             "name": "psr/container",
