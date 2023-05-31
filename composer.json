@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.7",
-        "laravel/framework": "^10.12",
+        "laravel/framework": "^10.13",
         "laravel/tinker": "^2.8",
         "ocramius/package-versions": "^2.7",
         "propaganistas/laravel-phone": "^5.0"
