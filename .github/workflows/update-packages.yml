@@ -11,9 +11,7 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
+      uses: actions/checkout@v4
         
     - name: Update composer packages
       run: |
