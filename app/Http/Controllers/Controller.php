@@ -22,7 +22,7 @@ class Controller extends BaseController
                 $request->input('country_name')
             ])),
             $rules = [
-                'field' => Arr::wrap($request->input('parameters')),
+                'field' => explode('|', $request->input('parameters')),
             ]
         );
 
