@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('libphonenumber.version', function($app) {
-            return $this->getPackageVersion('giggsey/libphonenumber-for-php');
+            return $this->getPackageVersion('giggsey/libphonenumber-for-php-lite');
         });
     }
 

@@ -31,7 +31,7 @@
             <div class="uk-margin-small-bottom">
                 This demo runs on
             </div>
-            <div uk-grid class="uk-grid-collapse uk-child-width-1-1@m uk-child-width-1-4@l">
+            <div uk-grid class="uk-grid-collapse uk-child-width-1-1@m uk-child-width-1-5@l">
                 <div>
                     <a href="https://www.php.net/">
                         <code>PHP&commat;{{ phpversion() }}</code>
@@ -42,9 +42,9 @@
                         <code>laravel/framework&commat;{{ app('illuminate.version') }}</code>
                     </a>
                 </div>
-                <div>
-                    <a href="https://github.com/giggsey/libphonenumber-for-php">
-                        <code>giggsey/libphonenumber-for-php&commat;{{ app('libphonenumber.version') }}</code>
+                <div class="uk-width-2-5@l">
+                    <a href="https://github.com/giggsey/libphonenumber-for-php-lite">
+                        <code>giggsey/libphonenumber-for-php-lite&commat;{{ app('libphonenumber.version') }}</code>
                     </a>
                 </div>
                 <div>
