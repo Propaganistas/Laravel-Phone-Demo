@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5951ab6d22aa4cec5f41a2f8658f640",
+    "content-hash": "70c5b2f6787811f93f6af355b057cf6f",
     "packages": [
         {
             "name": "brick/math",
@@ -579,16 +579,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php-lite",
-            "version": "8.13.36",
+            "version": "8.13.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php-lite.git",
-                "reference": "144bbe70d67664b5245910a475c7190ff140ab4b"
+                "reference": "3e9d76a9e39fc4b6767a54910aed795d49edcd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php-lite/zipball/144bbe70d67664b5245910a475c7190ff140ab4b",
-                "reference": "144bbe70d67664b5245910a475c7190ff140ab4b",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php-lite/zipball/3e9d76a9e39fc4b6767a54910aed795d49edcd23",
+                "reference": "3e9d76a9e39fc4b6767a54910aed795d49edcd23",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +658,7 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php-lite/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php-lite"
             },
-            "time": "2024-05-03T06:31:11+00:00"
+            "time": "2024-05-16T09:01:25+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1135,16 +1135,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.7.0",
+            "version": "v11.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e5ac72f513f635f208024aa76b8a04efc1b47f93"
+                "reference": "ceb892a25817c888ef3df4d1a2af9cac53978300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e5ac72f513f635f208024aa76b8a04efc1b47f93",
-                "reference": "e5ac72f513f635f208024aa76b8a04efc1b47f93",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ceb892a25817c888ef3df4d1a2af9cac53978300",
+                "reference": "ceb892a25817c888ef3df4d1a2af9cac53978300",
                 "shasum": ""
             },
             "require": {
@@ -1269,7 +1269,7 @@
                 "ext-pcntl": "Required to use all features of the queue worker and console signal trapping.",
                 "ext-pdo": "Required to use all database features.",
                 "ext-posix": "Required to use all features of the queue worker.",
-                "ext-redis": "Required to use the Redis cache and queue drivers (^4.0|^5.0).",
+                "ext-redis": "Required to use the Redis cache and queue drivers (^4.0|^5.0|^6.0).",
                 "fakerphp/faker": "Required to use the eloquent factory builder (^1.9.1).",
                 "filp/whoops": "Required for friendly error pages in development (^2.14.3).",
                 "laravel/tinker": "Required to use the tinker console command (^2.0).",
@@ -1336,20 +1336,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-05-07T13:41:51+00:00"
+            "time": "2024-05-21T17:57:45+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.21",
+            "version": "v0.1.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "23ea808e8a145653e0ab29e30d4385e49f40a920"
+                "reference": "37f94de71758dbfbccc9d299b0e5eb76e02a40f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/23ea808e8a145653e0ab29e30d4385e49f40a920",
-                "reference": "23ea808e8a145653e0ab29e30d4385e49f40a920",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/37f94de71758dbfbccc9d299b0e5eb76e02a40f5",
+                "reference": "37f94de71758dbfbccc9d299b0e5eb76e02a40f5",
                 "shasum": ""
             },
             "require": {
@@ -1392,9 +1392,9 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.21"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.22"
             },
-            "time": "2024-04-30T12:46:16+00:00"
+            "time": "2024-05-10T19:22:18+00:00"
         },
         {
             "name": "laravel/serializable-closure",
