@@ -15,16 +15,18 @@ class Controller extends BaseController
     }
 
     public function validate(Request $request)
-    {        
-        $validator = Validator::make(
-            $data = $request->only(array_filter([
-                'field',
-                $request->input('country_name')
-            ])),
-            $rules = [
-                'field' => explode('|', $request->input('parameters')),
-            ]
-        );
+    {
+        $data = ['field' => $request->get('phone')];
+
+        if ($request->boolean('with_country')) {
+            $data[$request->get('country_name') ?: 'field_country'] = $request->get('country');
+        }
+
+        $rules = [
+            'field' => explode('|', $request->input('parameters')),
+        ];
+
+        $validator = Validator::make($data, $rules);
 
         try {
             return response()->json([

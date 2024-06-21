@@ -1,6 +1,4 @@
-@import "~uikit/src/scss/variables-theme.scss";
-@import "~uikit/src/scss/mixins-theme.scss";
-@import "~uikit/src/scss/uikit-theme.scss";
+@import "uikit";
 
 [v-cloak] {
   display: none;
@@ -18,7 +16,7 @@ label[for] {
   }
 }
 
-// Prevent doubled icons because of UIkit-Vue
+/* Prevent doubled icons because of UIkit-Vue */
 .uk-icon {
   > svg {
     &:nth-child(2) {
