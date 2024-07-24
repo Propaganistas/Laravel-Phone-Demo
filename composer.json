@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": "^8.2",
-        "guzzlehttp/guzzle": "^7.8",
-        "laravel/framework": "^11.16",
+        "guzzlehttp/guzzle": "^7.9",
+        "laravel/framework": "^11.17",
         "ocramius/package-versions": "^2.8",
         "propaganistas/laravel-phone": "^5.3"
     },
