@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.9",
-        "laravel/framework": "^11.39",
+        "laravel/framework": "^11.41",
         "ocramius/package-versions": "^2.9",
         "propaganistas/laravel-phone": "^5.3"
     },
