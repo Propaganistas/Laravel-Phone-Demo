@@ -5,11 +5,10 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.2",
-        "guzzlehttp/guzzle": "^7.10",
+        "php": "^8.4",
         "laravel/framework": "^13.0",
         "ocramius/package-versions": "^2.11",
-        "propaganistas/laravel-phone": "dev-laravel-13"
+        "propaganistas/laravel-phone": "^6.0.3"
     },
     "config": {
         "optimize-autoloader": true,
