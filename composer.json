@@ -6,7 +6,7 @@
     "type": "project",
     "require": {
         "php": "^8.4",
-        "laravel/framework": "^13.17",
+        "laravel/framework": "^13.18",
         "ocramius/package-versions": "^2.12",
         "propaganistas/laravel-phone": "^6.0"
     },
