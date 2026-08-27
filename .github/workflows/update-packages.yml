@@ -12,13 +12,12 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: 8.3
-        tools: composer:v2
+        php-version: 8.5
         
     - name: Update composer packages
       run: |
@@ -27,7 +26,7 @@ jobs:
            < "composer.json" jq -r '."require-dev" | to_entries[] | select(.value | startswith("^")) | select(.key | contains("/")) | .key' | tr '\n' ' ' | xargs -r php -d memory_limit=2G "$(command -v composer)" require --dev --no-interaction --prefer-dist --no-suggest
 
     - name: Push changes
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v7
       with:
         branch: master
         commit_message: "[AUTO] Update dependencies"
