@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         data: {
             parameters: params.get('parameters') || 'phone:',
+            default_countries: params.get('default_countries') || '',
             phone: params.get('phone') || '',
             country: params.get('country') || '',
             country_name: params.get('country_name') || '',
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             requestData() {
                 const data = {
                     parameters: this.parameters,
+                    default_countries: this.default_countries.split(',').filter(Boolean).map(c => c.trim()),
                     phone: this.phone,
                 }
 
@@ -87,6 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
             },
 
             parameters(value, old) {
+                if (this.shouldValidate) {
+                    this.validate()
+                }
+            },
+
+            default_countries(value, old) {
                 if (this.shouldValidate) {
                     this.validate()
                 }
@@ -125,6 +133,11 @@ document.addEventListener('DOMContentLoaded', function () {
         methods: {
             toggle() {
                 this.withCountry = this.withCountry === 1 ? 0 : 1
+
+                if (this.withCountry === 0) {
+                    this.country = ''
+                    this.country_name = ''
+                }
             },
 
             formatAsPHPArray(json) {

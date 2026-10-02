@@ -65,7 +65,7 @@
                         </div>
 
                         <div>
-                            <div class="uk-text-center">Validation rules</div>
+                            <div class="uk-text-center">Applied validation rules</div>
                             <div>
 <pre>
 @{{ formatAsPHPArray(response.rules) }}
@@ -111,6 +111,13 @@
                             </label>
                             <div class="uk-form-controls uk-inline uk-width-1-1">
                                 <input id="parameters" type="text" name="parameters" v-model="parameters" class="uk-input" placeholder="">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="uk-form-label" for="default_countries">Default countries set in ServiceProvider (optional)</label>
+                            <div class="uk-form-controls ">
+                                <input id="default_countries" type="text" name="default_countries" class="uk-input uk-form-small" v-model="default_countries" placeholder="">
                             </div>
                         </div>
                     </div>

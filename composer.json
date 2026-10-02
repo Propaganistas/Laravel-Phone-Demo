@@ -8,7 +8,7 @@
         "php": "^8.4",
         "laravel/framework": "^13.34",
         "ocramius/package-versions": "^2.12",
-        "propaganistas/laravel-phone": "^6.0"
+        "propaganistas/laravel-phone": "^6.1"
     },
     "config": {
         "optimize-autoloader": true,
